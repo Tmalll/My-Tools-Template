@@ -1,0 +1,5 @@
+±àÂë
+powershell Measure-Command { openssl base64 -A -in 5120m -out 5120m.base64 }
+
+½âÂë
+powershell Measure-Command { openssl base64 -d -A -in 5120m.base64 -out 5120m.out  }
