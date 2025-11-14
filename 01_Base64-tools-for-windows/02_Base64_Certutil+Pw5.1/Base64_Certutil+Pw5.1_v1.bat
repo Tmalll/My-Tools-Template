@@ -3,7 +3,7 @@ setlocal enabledelayedexpansion
 
 echo.
 echo.
-echo Powershell + Certutil
+echo Certutil+Powershell-5.1
 echo.
 echo 编码限制: 最大测试5G编码成功
 echo 解码限制: 小于 2GB 的二进制文件.
@@ -12,11 +12,11 @@ echo.
 echo.
 
 :: 在批处理里定义 bufferSize（单位 MB）这里就是定义一行有多少数据.
-:: 如果想要被 certutil 解码 所填值必须是3的倍数 1 / 3 / 6 / 9 / 12 / ...
-set bufferSize=12
-
-:: 计算字节数：bufferSize × 1048576
-set /a bufferBytes=%bufferSize%*1048576
+:: 如果想要兼容被 certutil 解码 所填值必须是3的倍数 1 / 3 / 6 / 9 / 12 / ...
+:: 如果不考虑其他解码器, 则无设置限制
+set bufferSize=1
+:: 计算字节数
+set /a bufferBytes=%bufferSize%*1024*1024
 
 
 if "%~1"=="" (
@@ -41,7 +41,7 @@ for %%F in (%*) do (
         
     ) else (
         
-        echo 编码中: "%%~dpnF" 多行 Base64 版本
+        echo 编码中: "%%~dpnF"
         powershell -NoProfile -Command ^
         "$infile='%%~fF';" ^
         "$outfile='%%~dpnxF.b64';" ^
@@ -53,7 +53,7 @@ for %%F in (%*) do (
         "  $output.WriteLine($chunk)" ^
         "};" ^
         "$input.Close();$output.Close();"
-        echo 编码完成: "%%~dpnxF.b64" 多行 Base64 版本
+        echo 编码完成: "%%~dpnxF.b64"
         
         
     )
