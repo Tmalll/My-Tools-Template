@@ -3,11 +3,10 @@ setlocal enabledelayedexpansion
 
 echo.
 echo.
-echo Certutil+Powershell-5.1
+echo Certutil(解码) + Powershell-5.1(编码)
 echo.
-echo 编码限制: 最大测试5G编码成功
-echo 解码限制: 小于 2GB 的二进制文件.
-echo 解码限制: 小于 2.66GB 的 Base64 文件.
+echo 编码限制: 单个 Base64 文件 = 2.66GB (chunkSizeMB 控制)
+echo 解码限制: Certutil 最大支持二进制文件 2.5G
 echo.
 echo.
 
