@@ -1,15 +1,5 @@
 gh repo edit Tmalll/myrepo --name myrepo-new
-
 https://github.com/Tmalll/Base64-tools-for-windows > https://github.com/Tmalll/My-Tools-Template
-
-远程改名
-gh repo edit Tmalll/Base64-tools-for-windows --name My-Tools-Template
-
-更新存储库地址
-git remote set-url origin https://github.com/Tmalll/My-Tools-Template.git
-
-确认
-git remote -v
 
 全流程版
 # 修改 GitHub 仓库名
@@ -22,4 +12,5 @@ git remote set-url origin https://github.com/Tmalll/My-Tools-Template.git
 # 测试推送
 git push
 
-
+确认
+git remote -v
