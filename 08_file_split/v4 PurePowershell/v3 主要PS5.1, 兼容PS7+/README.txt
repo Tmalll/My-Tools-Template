@@ -1,0 +1,1 @@
+纯powershell版本,  用 .bat 调用,  拖拽文件放到 SplitMerge_Launcher.bat 上 即可调用 SplitMerge.ps1 进行转换.

@@ -1,0 +1,16 @@
+gh repo edit Tmalll/myrepo --name myrepo-new
+https://github.com/Tmalll/Base64-tools-for-windows > https://github.com/Tmalll/My-Tools-Template
+
+全流程版
+# 修改 GitHub 仓库名
+gh api -X PATCH -H "Accept: application/vnd.github+json" /repos/Tmalll/Base64-tools-for-windows -F name=My-Tools-Template
+
+# 在你的本地仓库中更新远程地址
+cd 你的本地项目目录
+git remote set-url origin https://github.com/Tmalll/My-Tools-Template.git
+
+# 测试推送
+git push
+
+确认
+git remote -v
